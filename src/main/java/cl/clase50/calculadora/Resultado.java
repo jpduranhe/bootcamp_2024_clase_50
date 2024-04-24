@@ -11,9 +11,7 @@ import java.io.PrintWriter;
 import cl.clase50.calculadora.servicio.ServicioCalculadora;
 import cl.clase50.calculadora.servicio.ServicioCalculadoraImpl;
 
-/**
- * Servlet implementation class Resultado
- */
+
 public class Resultado extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,11 +26,18 @@ public class Resultado extends HttpServlet {
 		
 		String num1String= request.getParameter("num1");
 		String num2String= request.getParameter("num2");
+		String operacion= request.getParameter("operacion");
 		
 		int num1= Integer.parseInt(num1String);
 		int num2= Integer.parseInt(num2String);
 		
-		int resultado=servicioCalculadora.sumar(num1, num2);
+		int resultado=0;
+		if(operacion.equals("suma")) {
+			resultado= servicioCalculadora.sumar(num1, num2);
+		}else {
+			resultado= servicioCalculadora.restar(num1, num2);
+		}
+				
 		
 		response.setContentType("text/html");
 		
@@ -51,6 +56,10 @@ public class Resultado extends HttpServlet {
 				""";
 		*/
 		String html="<html>"+
+					"<head>"+
+				    "<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\">"
+				    +
+				    "</head>"+
 					"<body>"+
 					"<h1> El resultado es:"+
 					resultado+

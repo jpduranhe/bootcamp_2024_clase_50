@@ -29,4 +29,14 @@
     <servlet-name>Resultado</servlet-name>
     <url-pattern>/Resultado</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Jaime</display-name>
+    <servlet-name>Jaime</servlet-name>
+    <servlet-class>cl.clase50.calculadora.Jaime</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jaime</servlet-name>
+    <url-pattern>/Jaime</url-pattern>
+  </servlet-mapping>
 </web-app>
