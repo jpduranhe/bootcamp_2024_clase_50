@@ -42,36 +42,25 @@ public class Resultado extends HttpServlet {
 		response.setContentType("text/html");
 		
 		PrintWriter out=  response.getWriter();
-		/*
-		String html= """
-				<html>
-					<head>
-						<title>Cacluladora</title>
-					</head>
-					<body>
-						<h1>Calculadora</h1>											
-						<h1>Calculadora</h1>
-					</body>
-				</html>
-				""";
-		*/
 		String html="<html>"+
-					"<head>"+
-				    "<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\">"
-				    +
-				    "</head>"+
-					"<body>"+
-					"<h1> El resultado es:"+
-					resultado+
-					"</h1>"+
-					"</body>"+
+						"<head>"+
+							"<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\">"+
+				       "</head>"+
+						"<body>"+
+							"<div class=\"container\">"+
+								"<div class=\"alert alert-success\" role=\"alert\">"+
+									"<h1> El resultado es:"+
+										resultado+
+									"</h1>"+
+								"</div>"+
+							"</div>"+
+						"</body>"+
 					"</html>";
 		out.println(html);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
